@@ -1,0 +1,14 @@
+{
+    "name": "smudge/dotenv-manager",
+    "description": "DotEnv Manager helps you manage your dotenv files within your projects.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Chris Smith",
+            "email": "Smudge3806@live.co.uk"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
