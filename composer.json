@@ -16,5 +16,13 @@
         "symfony/filesystem": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0",
         "symfony/finder": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0",
         "symfony/process": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Smudge\\": "src/"
+        }
+    },
+    "support": {
+        "issues": "https://github.com/smudge3806/dotenv-manager/issues"
     }
 }
