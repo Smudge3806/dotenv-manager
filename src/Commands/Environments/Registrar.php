@@ -3,14 +3,14 @@
 namespace Xedi\Dotenv\Commands\Environments;
 
 use Symfony\Component\Console\Application;
+use Xedi\Dotenv\Commands\Registrar as BaseRegistrar;
 
-class Registrar
+class Registrar extends BaseRegistrar
 {
     public static function registerCommands(Application $app)
     {
-        $app->add(new AddCommand());
-        $app->add(new InfoCommand());
-        $app->add(new ListCommand());
-        $app->add(new RemoveCommand());
+        $commands = static::loadNamespace($app);
+
+        $app->addCommands($commands);
     }
 }

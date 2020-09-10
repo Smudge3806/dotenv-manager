@@ -31,4 +31,11 @@ interface DriverManager
      * @return boolean
      */
     public function hasDriver(string $alias): bool;
+
+    /**
+     * List all registered Drivers
+     *
+     * @return array
+     */
+    public function getDrivers(): array;
 }
