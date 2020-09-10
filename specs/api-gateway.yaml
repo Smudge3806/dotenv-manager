@@ -1,0 +1,202 @@
+- name: APP_NAME
+  type: string
+  value: services-api-gateway
+
+- name: APP_ENV
+  type: string
+  value: ${APP_ENV}
+  source: env
+
+- name: APP_KEY
+  type: string
+  value: ${APP_KEY}
+  source: env
+
+- name: APP_DEBUG
+  type: string
+  value: ${APP_DEBUG}
+  source: env
+
+- name: APP_URL
+  type: string
+  value: ${APP_URL}
+  source: env
+
+- name: APP_TIMEZONE
+  type: string
+  value: Europe/London
+
+- name: JWT_TOKEN
+  type: string
+  value: ${JWT_TOKEN}
+  source: env
+
+- name: GUZZLE_SSL_VERIFY
+  type: boolean
+  value: true
+  source: env
+
+- name: QUEUE_AWS_ACCOUNT_ID
+  type: string
+  value: ${QUEUE_AWS_ACCOUNT_ID}
+  source: git
+
+- name: QUEUE_AWS_ACCESS_KEY_ID
+  type: string
+  value: ${QUEUE_AWS_ACCESS_KEY_ID}
+  source: git
+
+- name: QUEUE_AWS_SECRET_ACCESS_KEY
+  type: string
+  value: ${QUEUE_AWS_SECRET_ACCESS_KEY}
+  source: git
+
+- name: QUEUE_AWS_REGION
+  type: string
+  value: ${QUEUE_AWS_REGION}
+  source: git
+  default: eu-west-1
+
+- name: AWS_SNS_NAMESPACE
+  type: string
+  value: ${AWS_SNS_NAMESPACE}
+  source: git
+
+- name: REDIS_HOST
+  type: string
+  value: redis
+
+- name: REDIS_PORT
+  type: string
+  value: 6739
+
+- name: LOG_FILES
+  type: boolean
+  value: ${LOG_FILES}
+  source: env
+  default: false
+
+- name: LOG_CHANNEL
+  type: boolean
+  value: false
+
+- name: LOG_LEVEL
+  type: string
+  value: ${LOG_LEVEL}
+  source: env
+  default: debug
+
+- name: LOG_SLACK_WEBHOOK_URL
+  type: string
+  value: ${LOG_SLACK_WEBHOOK_URL}
+  nullable: true
+
+- name: BROADCAST_DRIVER
+  type: string
+  value: ${BROADCAST_DRIVER}
+  source: env
+  default: log
+
+- name: QUEUE_DRIVER
+  type: string
+  value: ${QUEUE_DRIVER}
+  source: env
+  default: sync
+
+- name: CACHE_DRIVER
+  type: string
+  value: ${CACHE_DRIVER}
+  source: env
+  default: redis
+
+- name: SESSION_DRIVER
+  type: string
+  value: ${SESSION_DRIVER}
+  source: env
+  default: redis
+
+- name: SESSION_LIFETIME
+  type: string
+  value: ${SESSION_LIFETIME}
+  source: env
+  default: 120
+
+- name: AS2_CONNECTOR_URL
+  type: string
+  value: ${AS2_CONNECTOR_URL}
+  source: env
+
+- name: AUDIT_URL
+  type: string
+  value: ${AUDIT_URL}
+  source: env
+
+- name: BILLING_URL
+  type: string
+  value: ${BILLING_URL}
+  source: env
+
+- name: BUSINESSES_URL
+  type: string
+  value: ${BUSINESSES_URL}
+  source: env
+
+- name: IAM_URL
+  type: string
+  value: ${IAM_URL}
+  source: env
+
+- name: INTRANET_URL
+  type: string
+  value: ${INTRANET_URL}
+  source: env
+
+- name: MESSAGING_URL
+  type: string
+  value: ${MESSAGING_URL}
+  source: env
+
+- name: MFT_URL
+  type: string
+  value: ${MFT_URL}
+  source: env
+
+- name: MESSAGING_URL
+  type: string
+  value: ${MESSAGING_URL}
+  source: env
+
+- name: MONITORING_URL
+  type: string
+  value: ${MONITORING_URL}
+  source: env
+
+- name: PARSER_URL
+  type: string
+  value: ${PARSER_URL}
+  source: env
+
+- name: SETTINGS_URL
+  type: string
+  value: ${SETTINGS_URL}
+  source: env
+
+- name: TGMS_CONNECTOR_URL
+  type: string
+  value: ${TGMS_CONNECTOR_URL}
+  source: env
+
+- name: UI_URL
+  type: string
+  value: ${UI_URL}
+  source: env
+
+- name: WORKFLOWS_URL
+  type: string
+  value: ${WORKFLOWS_URL}
+  source: env
+
+- name: XNET_URL
+  type: string
+  value: ${XNET_URL}
+  source: env
