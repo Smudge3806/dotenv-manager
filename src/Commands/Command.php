@@ -7,6 +7,7 @@ use Symfony\Component\Console\Command\Command as SymfonyCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
+use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 
 abstract class Command extends SymfonyCommand
@@ -43,6 +44,9 @@ abstract class Command extends SymfonyCommand
 
     protected function confirm(string $question): bool
     {
+        $question = new ConfirmationQuestion($question);
 
+        return ($this->getHelper('question'))
+            ->ask($this->input, $this->output, $question);
     }
 }

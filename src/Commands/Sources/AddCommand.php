@@ -15,13 +15,26 @@ class AddCommand extends Command
 
     public function handle()
     {
+        $drivers = $this->getApplication()
+            ->source_manager
+            ->getDrivers();
+
         $driver = $this->choice(
             'Which source would you like to add?',
-            array_keys(
-                $this->getApplication()
-                    ->source_manager
-                    ->getDrivers()
-            )
+            array_keys($drivers)
         );
+
+        $driver = $drivers[$driver];
+
+        $requirements = $driver->getConfigurationRequirements();
+        $configuration = [];
+
+        foreach ($requirements as $key => $requirement) {
+            $configuration[$key] = $this->{$requirement['type']}($requirement['question']);
+        }
+
+        $driver->configure($configuration);
+
+
     }
 }
