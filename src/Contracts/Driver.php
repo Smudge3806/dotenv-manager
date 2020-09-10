@@ -1,6 +1,6 @@
 <?php
 
-namespace Smudge\Dotenv\Contracts;
+namespace Xedi\Dotenv\Contracts;
 
 /**
  * Common Driver interface

@@ -1,12 +1,16 @@
 {
-    "name": "smudge/dotenv-manager",
+    "name": "xedi/dotenv-manager",
     "description": "DotEnv Manager helps you manage your dotenv files within your projects.",
     "type": "library",
     "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Chris Smith",
-            "email": "Smudge3806@live.co.uk"
+            "email": "chris@xedi.com"
+        },
+        {
+            "name": "Thornton Phillis",
+            "email": "thornton@xedi.coms"
         }
     ],
     "minimum-stability": "stable",
@@ -20,10 +24,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Smudge\\Dotenv\\": "src/"
+            "Xedi\\Dotenv\\": "src/"
         }
     },
     "support": {
-        "issues": "https://github.com/smudge3806/dotenv-manager/issues"
+        "issues": "https://github.com/xedi/tooling-dotenv-manager/issues"
     }
 }
