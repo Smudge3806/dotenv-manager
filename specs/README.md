@@ -66,3 +66,12 @@
   source: git
   default: eu-west-1
 ```
+
+## Allow a nullable Variable
+
+```
+- name: LOG_SLACK_WEBHOOK_URL
+  type: string
+  value: ${LOG_SLACK_WEBHOOK_URL}
+  nullable: true
+```
