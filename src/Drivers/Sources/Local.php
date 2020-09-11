@@ -2,6 +2,8 @@
 
 namespace Xedi\Dotenv\Drivers\Sources;
 
+use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Filesystem\Filesystem;
 use Xedi\Dotenv\Config;
 use Xedi\Dotenv\Contracts\Secret;
 use Xedi\Dotenv\Contracts\SecretDefinition;
@@ -33,6 +35,11 @@ class Local implements SourceDriver
 
     }
 
+    public function addSecret(Secret $secret)
+    {
+
+    }
+
     public function getConfigurationRequirements()
     {
         return [
@@ -43,8 +50,19 @@ class Local implements SourceDriver
         ];
     }
 
-    public function configure(array $configuration)
+    public function configure(array $configuration, SymfonyStyle $output)
     {
-        Config::put('sources.local.enabled', true);
+        $file_system = new Filesystem();
+        Config::put('sources.local.enabled', $configuration['confirm']);
+        $file_path = Config::get('sources.local.path', getenv('HOME') . '/.dotenv_manager/stores/local.json');
+
+        if ($configuration['confirm'] === false) {
+            return;
+        }
+
+        if (! $file_system->exists($file_path)) {
+            $file_system->dumpFile($file_path, '');
+            $output->note('Created local store');
+        }
     }
 }

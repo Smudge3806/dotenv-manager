@@ -2,6 +2,7 @@
 
 namespace Xedi\Dotenv\Commands\Sources;
 
+use Symfony\Component\Console\Style\SymfonyStyle;
 use Xedi\Dotenv\Commands\Command;
 
 class AddCommand extends Command
@@ -15,26 +16,27 @@ class AddCommand extends Command
 
     public function handle()
     {
+        $style = new SymfonyStyle($this->input, $this->output);
         $drivers = $this->getApplication()
             ->source_manager
             ->getDrivers();
 
-        $driver = $this->choice(
+        $driver_name = $this->choice(
             'Which source would you like to add?',
             array_keys($drivers)
         );
 
-        $driver = $drivers[$driver];
+        $driver = $drivers[$driver_name];
 
         $requirements = $driver->getConfigurationRequirements();
         $configuration = [];
 
         foreach ($requirements as $key => $requirement) {
-            $configuration[$key] = $this->{$requirement['type']}($requirement['question']);
+            $configuration[$key] = $style->{$requirement['type']}($requirement['question']);
         }
 
-        $driver->configure($configuration);
+        $driver->configure($configuration, $style);
 
-
+        $style->success("Added $driver_name store");
     }
 }
